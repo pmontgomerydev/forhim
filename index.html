@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>I love you</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="universe">
+
+        <!-- Top navigation -->
+        <header class="site-header">
+
+            <a href="#" class="logo">
+                For You
+                <i class="fa-regular fa-heart"></i>
+            </a>
+
+            <nav class="navigation">
+                <a href="#home" class="active">Home</a>
+                <a href="#stars">Our Stars</a>
+              
+            
+            </nav>
+
+            <div class="star-counter">
+                <i class="fa-solid fa-sparkles"></i>
+
+                <span id="discoveredCount">0</span>
+                of 100 stars discovered
+            </div>
+
+        </header>
+
+        <!-- Main message -->
+        <section class="hero" id="home">
+
+            <p class="birthday-label">
+                For When the World Feels Too Heavy
+            </p>
+
+            <h1>You don't have to carry everything tonight</h1>
+
+            <p class="hero-message">
+                  Every star holds something I hope
+                <br>
+                
+    makes the world feel a little softer tonight.
+            </p>
+
+            <p class="hero-instruction">
+                   Click a star whenever you need one.
+                <span>They're all for you.</span>
+            </p>
+
+        </section>
+
+        <!-- Stars will be added here with JavaScript -->
+        <section
+            class="star-field"
+            id="stars"
+            aria-label="100 interactive stars"
+        ></section>
+
+        <!-- Moon -->
+        <button
+            class="moon-button"
+            id="moonButton"
+            type="button"
+            aria-label="Open letter"
+        >
+           <img
+    src="images/moon.png"
+    alt="Full moon"
+    class="moon-image"
+>
+
+            <span class="moon-title">
+                Click the Moon
+            </span>
+
+            <span class="moon-subtitle">
+                for a little note
+            </span>
+
+            <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <!-- Star legend -->
+        <aside class="star-legend">
+
+            <h2>About Our Stars</h2>
+
+            <div class="legend-row">
+                <span class="legend-star white-star">✦</span>
+                <p>94 reasons I love you</p>
+            </div>
+
+            <div class="legend-row">
+                <span class="legend-star white-star">✦</span>
+                <p>5 dates and memories</p>
+            </div>
+
+            <div class="legend-row">
+                <span class="legend-star special-star">✦</span>
+                <p>1 wish for us</p>
+            </div>
+
+            <p class="legend-note">
+                100 little pieces of us
+                <i class="fa-regular fa-heart"></i>
+            </p>
+
+        </aside>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+
+            <div class="footer-line"></div>
+
+            <i class="fa-regular fa-heart"></i>
+
+            <div class="footer-line"></div>
+
+            <p>
+                Thank you for being you.
+                <br>
+                I love you more than words can ever explain.
+            </p>
+
+        </footer>
+
+        <!-- Music button -->
+        <button
+            class="music-button"
+            id="musicButton"
+            type="button"
+        >
+            <i class="fa-solid fa-music"></i>
+            <span>Play our song</span>
+        </button>
+
+        <audio id="ourSong" loop>
+            <source src="audio/our-song.mp3" type="audio/mpeg">
+        </audio>
+
+    </main>
+
+    <!-- Star message popup -->
+    <div
+        class="modal-overlay"
+        id="starModal"
+        hidden
+    >
+        <div class="message-modal">
+
+            <button
+                class="modal-close"
+                id="closeStarModal"
+                type="button"
+                aria-label="Close message"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-star">✦</span>
+
+            <p class="modal-number" id="modalNumber">
+                Star 1
+            </p>
+
+            <h2 id="modalTitle">
+                A Reason I Love You
+            </h2>
+<p class="modal-date" id="modalDate" hidden></p>
+
+            <p id="modalMessage">
+                Your message will appear here.
+            </p>
+
+        </div>
+    </div>
+
+   <!-- Moon letter popup -->
+    <div
+        class="modal-overlay"
+        id="moonModal"
+        hidden
+    >
+        <div class="letter-modal">
+
+            <button
+                class="modal-close"
+                id="closeMoonModal"
+                type="button"
+                aria-label="Close letter"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <p class="letter-label">
+                
+            </p>
+
+            <h2>To the love of my life </h2>
+
+            <div class="letter-content">
+                <p>
+                    Jadon,
+                </p>
+
+                <p>
+                    Hey, my love.
+
+If you clicked the moon, I’m guessing maybe you needed somewhere soft to land for a minute.
+
+I know life feels really heavy right now. I know there are probably a million things running through your head, a million things you feel like you need to fix, figure out, handle, or hold together.
+
+But right now, just for a minute, I want you to forget all of that.
+
+I want you to remember you. The person I love more than I could ever properly put into words.
+<br><br>
+
+I wish you could see yourself through my eyes. I wish you could see how incredibly special you are to me. Not because of what you accomplish, not because of what you can provide, not because you're strong enough to handle everything life throws at you.
+
+Just because you're you.
+
+<br><br>
+
+I love your heart. I love your laugh. I love the little things you probably don't even realize you do. I love hearing your voice. I love spending completely ordinary moments with you and somehow having them become some of my favorite parts of my day.
+
+I love the version of you that's happy and laughing and being ridiculous with me.
+
+But I also love this version of you.
+
+The tired one.
+
+The stressed one.
+
+The one who doesn't have all the answers right now.
+
+The one who might feel like everything is just a little too much.
+
+<br><br>
+
+You never have to be the strongest version of yourself for me to love you.
+
+You don't have to earn softness from me. You don't have to have a good day. You don't have to pretend you're okay. You don't have to fix everything before you're allowed to rest.
+
+You can just be you, 
+
+and I'll still be right here loving you.
+
+<br><br>
+
+If I could, I would reach through this screen, wrap my arms around you, kiss your forehead, and take every single heavy thought out of your head for the night. I'd carry them for you just so you could breathe without feeling like the entire world was sitting on your shoulders.
+
+I know I can't magically make everything better.
+
+So instead, I made you this little universe.
+
+<br><br>
+
+<b>A tiny place that exists for one reason:</b>
+
+<br>
+
+To remind you that somewhere in this huge world, there is someone who loves you an absolutely ridiculous amount.
+
+Me. It's me. Obviously. 
+
+And no matter how overwhelming life gets, I hope you never forget that you have me in your corner.
+
+<br><br>
+
+We're a team.
+
+You don't have to figure out your whole life tonight.
+
+You don't have to know what tomorrow looks like.
+
+Tonight, you just have to breathe.
+
+Drink some water. Let those shoulders relax. Unclench that handsome face of yours. And remember that whatever happens next, we'll get there one day at a time.
+
+<br><br>
+
+There are so many days with you that I haven't gotten to experience yet.
+<br>
+
+So many laughs we haven't had.
+<br>
+So many stupid jokes we haven't made.
+<br>
+So many games we haven't played.
+<br>
+So many late night conversations we haven't had.
+<br>
+So many memories that don't even exist yet.
+<br>
+And I can't wait for every single one of them.
+<br><br>
+You're one of my favorite parts of being alive.
+<br><br>
+You're my person.
+<br>
+My safe place.
+<br>
+My favorite notification.
+<br>
+My favorite voice to hear.
+<br>
+My favorite person to annoy.
+<br>
+And somehow, even after everything, I still find new reasons to love you all the time.
+<br><br>
+So whenever the world gets too loud, come back here.
+
+Click your moon.
+
+Read this again.
+<br><br>
+And imagine me telling you:
+<br><br>
+I love you. I'm proud of you. I'm here. You don't have to carry everything by yourself.
+You're going to get through this.
+And until things feel a little lighter, I'll sit underneath this moon with you for as long as you need.
+
+
+                </p>
+
+                <p>
+                    Always yours,
+                    <br>
+                    Paige 
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
