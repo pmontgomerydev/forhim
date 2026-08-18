@@ -1321,11 +1321,19 @@ animation-delay: var(--twinkle-delay, 0s);
        MOON
     ========================================== */
 
- .moon-button {
-    top: 820px;
+.moon-button {
+    position: absolute;
+
+    top: 1400px;
+
     left: 50%;
     right: auto;
+    bottom: auto;
+
     width: 220px;
+
+    z-index: 30;
+
     transform: translateX(-50%);
 }
 
