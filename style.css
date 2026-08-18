@@ -1199,12 +1199,10 @@ animation-delay: var(--twinkle-delay, 0s);
     ========================================== */
 
     .universe {
-        min-height: 3400px;
-        background-position: 58% center;
-    }
+        position: relative;
+        min-height: 3800px;
 
-    .universe::after {
-        height: 18%;
+        background-position: center;
     }
 
 
@@ -1236,8 +1234,6 @@ animation-delay: var(--twinkle-delay, 0s);
 
     .hero {
         margin-top: 32px;
-
-        /* Allows stars behind the hero to stay clickable */
         pointer-events: none;
     }
 
@@ -1266,21 +1262,21 @@ animation-delay: var(--twinkle-delay, 0s);
 
 
     /* ==========================================
-       MOBILE STAR FIELD
+       STAR FIELD
+       Ends BEFORE legend/footer
     ========================================== */
 
     .star-field {
         position: absolute;
         z-index: 10;
 
-        top: 280px;
-        right: 0;
-        bottom: 320px;
+        top: 300px;
         left: 0;
+        right: 0;
+
+        height: 2850px;
 
         width: 100%;
-        min-height: 0;
-
         margin: 0;
 
         pointer-events: none;
@@ -1288,7 +1284,7 @@ animation-delay: var(--twinkle-delay, 0s);
 
 
     /* ==========================================
-       MOBILE STARS
+       STARS
     ========================================== */
 
     .interactive-star {
@@ -1316,12 +1312,16 @@ animation-delay: var(--twinkle-delay, 0s);
     ========================================== */
 
     .moon-button {
-        top: 620px;
-        right: 50%;
+        position: absolute;
+        z-index: 30;
+
+        top: 690px;
+        left: 50%;
+        right: auto;
 
         width: 230px;
 
-        transform: translateX(50%);
+        transform: translateX(-50%);
     }
 
     .moon-image,
@@ -1337,21 +1337,23 @@ animation-delay: var(--twinkle-delay, 0s);
 
     /* ==========================================
        ABOUT OUR STARS
+       BELOW ALL INTERACTIVE STARS
     ========================================== */
 
     .star-legend {
-        position: relative;
+        position: absolute;
+        z-index: 22;
 
-        left: auto;
+        left: 50%;
         right: auto;
-        bottom: auto;
+        bottom: 310px;
 
         width: calc(100% - 40px);
-
-        margin: 40px auto 150px;
         padding: 20px 22px;
 
-        transform: none;
+        margin: 0;
+
+        transform: translateX(-50%);
     }
 
     .star-legend h2 {
@@ -1379,8 +1381,10 @@ animation-delay: var(--twinkle-delay, 0s);
     ========================================== */
 
     .site-footer {
+        position: absolute;
+
         left: 50%;
-        bottom: 76px;
+        bottom: 105px;
 
         grid-template-columns: 65px auto 65px;
 
@@ -1399,8 +1403,10 @@ animation-delay: var(--twinkle-delay, 0s);
     ========================================== */
 
     .music-button {
+        position: absolute;
+
         right: 50%;
-        bottom: 20px;
+        bottom: 25px;
 
         transform: translateX(50%);
     }
