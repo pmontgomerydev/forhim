@@ -1321,15 +1321,35 @@ animation-delay: var(--twinkle-delay, 0s);
         font-size: 32px;
     }
 
-    .star-legend {
-        left: 50%;
-        right: auto;
-        bottom: 175px;
+.star-legend {
+    position: relative;
 
-        width: calc(100% - 40px);
+    left: auto;
+    right: auto;
+    bottom: auto;
 
-        transform: translateX(-50%);
-    }
+    width: calc(100% - 40px);
+    margin: 40px auto 150px;
+
+    transform: none;
+
+    padding: 20px 22px;
+}
+
+.star-legend {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: calc(100% - 40px);
+    margin: 40px auto 150px;
+
+    transform: none;
+
+    padding: 20px 22px;
+}
 
     .site-footer {
         left: 50%;
