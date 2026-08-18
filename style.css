@@ -1322,19 +1322,19 @@ animation-delay: var(--twinkle-delay, 0s);
     ========================================== */
 
 .moon-button {
-    position: absolute;
+    position: absolute !important;
 
-    top: 1400px;
+    top: 1350px !important;
 
-    left: 50%;
-    right: auto;
-    bottom: auto;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
 
-    width: 220px;
+    width: 220px !important;
 
-    z-index: 30;
+    z-index: 30 !important;
 
-    transform: translateX(-50%);
+    transform: translateX(-50%) !important;
 }
 
     .moon-image,
