@@ -1201,16 +1201,11 @@ animation-delay: var(--twinkle-delay, 0s);
     /* ==========================================
        UNIVERSE
     ========================================== */
-
-    .universe {
+   .universe {
         position: relative;
-
-        width: 100%;
-        min-height: 4000px;
-
-        overflow: hidden;
-
-        background-position: center;
+        min-height: auto;
+        overflow-x: hidden;
+        overflow-y: visible;
     }
 
 
@@ -1288,55 +1283,38 @@ animation-delay: var(--twinkle-delay, 0s);
        The field has its OWN section of the page.
        It ends completely before the legend.
     ========================================== */
-
     .star-field {
-        position: absolute;
+        position: relative;
+
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+
+        width: calc(100% - 80px);
+        height: 3000px;
+
+        margin: 80px 40px 0;
+
         z-index: 10;
-
-        top: 350px;
-
-        /*
-           Leave 36px of space on BOTH sides.
-           This keeps stars and their 64px
-           touch targets from being cut off.
-        */
-        left: 36px;
-
-        width: calc(100% - 72px);
-        height: 2700px;
-
-        margin: 0;
-
         pointer-events: none;
+
+        overflow: visible;
     }
 
-
-    /* ==========================================
-       INTERACTIVE STARS
-    ========================================== */
-
     .interactive-star {
-        position: absolute;
-
-        z-index: 15;
-
         width: 64px;
         min-height: 64px;
 
+        z-index: 15;
         pointer-events: auto;
     }
 
-    .star-symbol {
-        font-size: 25px;
-
-        pointer-events: none;
-    }
-
+    .star-symbol,
     .star-number {
-        font-size: 13px;
-
         pointer-events: none;
     }
+
 
 
     /* ==========================================
@@ -1386,21 +1364,21 @@ animation-delay: var(--twinkle-delay, 0s);
     ========================================== */
 
     .star-legend {
-        position: absolute;
-        z-index: 30;
+        position: relative;
 
-        top: 3200px;
-        bottom: auto;
-
-        left: 50%;
+        top: auto;
+        left: auto;
         right: auto;
+        bottom: auto;
 
         width: calc(100% - 32px);
 
-        margin: 0;
+        margin: 60px auto 0;
         padding: 20px 22px;
 
-        transform: translateX(-50%);
+        transform: none;
+
+        z-index: 30;
     }
 
     .star-legend h2 {
@@ -1437,19 +1415,20 @@ animation-delay: var(--twinkle-delay, 0s);
     ========================================== */
 
     .site-footer {
-        position: absolute;
-        z-index: 30;
+        position: relative;
 
-        top: 3600px;
+        top: auto;
+        left: auto;
+        right: auto;
         bottom: auto;
-
-        left: 50%;
-
-        grid-template-columns: 55px auto 55px;
 
         width: calc(100% - 40px);
 
-        transform: translateX(-50%);
+        margin: 70px auto 0;
+
+        grid-template-columns: 55px auto 55px;
+
+        transform: none;
     }
 
     .site-footer p {
@@ -1460,23 +1439,25 @@ animation-delay: var(--twinkle-delay, 0s);
     /* ==========================================
        MUSIC
     ========================================== */
+  .music-button {
+        position: relative;
 
-    .music-button {
-        position: absolute;
-        z-index: 35;
-
-        top: 3750px;
+        top: auto;
+        left: auto;
+        right: auto;
         bottom: auto;
 
-        left: 50%;
-        right: auto;
+        width: fit-content;
 
-        transform: translateX(-50%);
+        margin: 35px auto 50px;
+
+        transform: none;
     }
 
     .music-button:hover {
-        transform: translateX(-50%) translateY(-3px);
+        transform: translateY(-3px);
     }
+}
 
 
     /* ==========================================
