@@ -1192,15 +1192,23 @@ animation-delay: var(--twinkle-delay, 0s);
    MOBILE
 ========================================== */
 
+/* ==========================================
+   MOBILE
+========================================== */
+
 @media (max-width: 760px) {
 
     /* ==========================================
-       MOBILE UNIVERSE
+       UNIVERSE
     ========================================== */
 
     .universe {
         position: relative;
-        min-height: 3800px;
+
+        width: 100%;
+        min-height: 4000px;
+
+        overflow: hidden;
 
         background-position: center;
     }
@@ -1214,9 +1222,14 @@ animation-delay: var(--twinkle-delay, 0s);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
         gap: 16px;
 
         padding: 20px;
+    }
+
+    .navigation {
+        display: none;
     }
 
     .logo {
@@ -1224,6 +1237,7 @@ animation-delay: var(--twinkle-delay, 0s);
     }
 
     .star-counter {
+        min-width: auto;
         font-size: 14px;
     }
 
@@ -1233,7 +1247,10 @@ animation-delay: var(--twinkle-delay, 0s);
     ========================================== */
 
     .hero {
-        margin-top: 32px;
+        width: calc(100% - 36px);
+
+        margin: 32px auto 0;
+
         pointer-events: none;
     }
 
@@ -1244,11 +1261,14 @@ animation-delay: var(--twinkle-delay, 0s);
 
     .hero h1 {
         margin-top: 13px;
+
         font-size: 61px;
+        line-height: 0.95;
     }
 
     .hero-message {
         margin-top: 21px;
+
         font-size: 18px;
     }
 
@@ -1263,20 +1283,28 @@ animation-delay: var(--twinkle-delay, 0s);
 
     /* ==========================================
        STAR FIELD
-       Ends BEFORE legend/footer
+
+       IMPORTANT:
+       The field has its OWN section of the page.
+       It ends completely before the legend.
     ========================================== */
 
     .star-field {
         position: absolute;
         z-index: 10;
 
-        top: 300px;
-        left: 0;
-        right: 0;
+        top: 350px;
 
-        height: 2850px;
+        /*
+           Leave 36px of space on BOTH sides.
+           This keeps stars and their 64px
+           touch targets from being cut off.
+        */
+        left: 36px;
 
-        width: 100%;
+        width: calc(100% - 72px);
+        height: 2700px;
+
         margin: 0;
 
         pointer-events: none;
@@ -1284,10 +1312,12 @@ animation-delay: var(--twinkle-delay, 0s);
 
 
     /* ==========================================
-       STARS
+       INTERACTIVE STARS
     ========================================== */
 
     .interactive-star {
+        position: absolute;
+
         z-index: 15;
 
         width: 64px;
@@ -1298,11 +1328,13 @@ animation-delay: var(--twinkle-delay, 0s);
 
     .star-symbol {
         font-size: 25px;
+
         pointer-events: none;
     }
 
     .star-number {
         font-size: 13px;
+
         pointer-events: none;
     }
 
@@ -1315,57 +1347,81 @@ animation-delay: var(--twinkle-delay, 0s);
         position: absolute;
         z-index: 30;
 
-        top: 690px;
+        top: 700px;
+
         left: 50%;
         right: auto;
+        bottom: auto;
 
-        width: 230px;
+        width: 220px;
 
         transform: translateX(-50%);
     }
 
     .moon-image,
     .moon {
-        width: 150px;
-        height: 150px;
+        width: 145px;
+        height: 145px;
     }
 
     .moon-title {
-        font-size: 32px;
+        margin-top: 10px;
+
+        font-size: 31px;
+    }
+
+    .moon-subtitle {
+        font-size: 15px;
     }
 
 
     /* ==========================================
        ABOUT OUR STARS
-       BELOW ALL INTERACTIVE STARS
+
+       Star field ends around 3050px.
+       Legend begins at 3200px.
+
+       This guarantees stars CANNOT sit
+       underneath this box.
     ========================================== */
 
     .star-legend {
         position: absolute;
-        z-index: 22;
+        z-index: 30;
+
+        top: 3200px;
+        bottom: auto;
 
         left: 50%;
         right: auto;
-        bottom: 310px;
 
-        width: calc(100% - 40px);
-        padding: 20px 22px;
+        width: calc(100% - 32px);
 
         margin: 0;
+        padding: 20px 22px;
 
         transform: translateX(-50%);
     }
 
     .star-legend h2 {
         margin-bottom: 14px;
+        padding-bottom: 12px;
+
+        font-size: 15px;
     }
 
     .legend-row {
-        margin: 10px 0;
+        gap: 12px;
+
+        margin: 11px 0;
     }
 
     .legend-row p {
         font-size: 15px;
+    }
+
+    .legend-star {
+        font-size: 22px;
     }
 
     .legend-note {
@@ -1382,11 +1438,14 @@ animation-delay: var(--twinkle-delay, 0s);
 
     .site-footer {
         position: absolute;
+        z-index: 30;
+
+        top: 3600px;
+        bottom: auto;
 
         left: 50%;
-        bottom: 105px;
 
-        grid-template-columns: 65px auto 65px;
+        grid-template-columns: 55px auto 55px;
 
         width: calc(100% - 40px);
 
@@ -1399,28 +1458,34 @@ animation-delay: var(--twinkle-delay, 0s);
 
 
     /* ==========================================
-       MUSIC BUTTON
+       MUSIC
     ========================================== */
 
     .music-button {
         position: absolute;
+        z-index: 35;
 
-        right: 50%;
-        bottom: 25px;
+        top: 3750px;
+        bottom: auto;
 
-        transform: translateX(50%);
+        left: 50%;
+        right: auto;
+
+        transform: translateX(-50%);
     }
 
     .music-button:hover {
-        transform: translateX(50%) translateY(-3px);
+        transform: translateX(-50%) translateY(-3px);
     }
 
 
     /* ==========================================
-       MODALS
+       STAR MODAL
     ========================================== */
 
     .message-modal {
+        width: calc(100% - 24px);
+
         padding: 42px 25px 34px;
     }
 
@@ -1428,7 +1493,15 @@ animation-delay: var(--twinkle-delay, 0s);
         font-size: 31px;
     }
 
+
+    /* ==========================================
+       MOON LETTER
+    ========================================== */
+
     .letter-modal {
+        width: calc(100% - 16px);
+        max-height: 88vh;
+
         padding: 45px 25px 35px;
     }
 
@@ -1441,50 +1514,10 @@ animation-delay: var(--twinkle-delay, 0s);
     }
 }
 
-    .site-footer {
-        left: 50%;
-        bottom: 76px;
 
-        grid-template-columns: 65px auto 65px;
-
-        width: calc(100% - 40px);
-    }
-
-    .site-footer p {
-        font-size: 15px;
-    }
-
-    .music-button {
-        right: 50%;
-        bottom: 20px;
-
-        transform: translateX(50%);
-    }
-
-    .music-button:hover {
-        transform: translateX(50%) translateY(-3px);
-    }
-
-    .message-modal {
-        padding: 42px 25px 34px;
-    }
-
-    .message-modal h2 {
-        font-size: 31px;
-    }
-
-    .letter-modal {
-        padding: 45px 25px 35px;
-    }
-
-    .letter-modal h2 {
-        font-size: 46px;
-    }
-
-    .letter-content {
-        font-size: 17px;
-    }
-
+/* ==========================================
+   MEMORY DATE
+========================================== */
 
 .modal-date {
     margin-top: -7px;
@@ -1503,120 +1536,4 @@ animation-delay: var(--twinkle-delay, 0s);
 
 .modal-date[hidden] {
     display: none;
-}
-
-/* ==========================================
-   FINAL MOBILE OVERRIDES
-   KEEP THIS AT VERY END OF STYLE.CSS
-========================================== */
-
-@media (max-width: 760px) {
-
-    .universe {
-        position: relative !important;
-        min-height: 3900px !important;
-        overflow: hidden !important;
-    }
-
-    /* Stars get their own protected area */
-    .star-field {
-        position: absolute !important;
-
-        top: 300px !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: auto !important;
-
-        width: 100% !important;
-        height: 2900px !important;
-
-        margin: 0 !important;
-
-        z-index: 10 !important;
-        pointer-events: none !important;
-    }
-
-    .interactive-star {
-        position: absolute !important;
-
-        width: 64px !important;
-        min-height: 64px !important;
-
-        z-index: 15 !important;
-        pointer-events: auto !important;
-    }
-
-    .star-symbol,
-    .star-number {
-        pointer-events: none !important;
-    }
-
-    /* Hero shouldn't block stars */
-    .hero {
-        pointer-events: none !important;
-    }
-
-    /* Moon stays near the top */
-    .moon-button {
-        position: absolute !important;
-
-        top: 690px !important;
-        left: 50% !important;
-        right: auto !important;
-        bottom: auto !important;
-
-        width: 230px !important;
-
-        z-index: 30 !important;
-
-        transform: translateX(-50%) !important;
-    }
-
-    /* Legend gets moved BELOW the star field */
-    .star-legend {
-        position: absolute !important;
-
-        left: 50% !important;
-        right: auto !important;
-        top: auto !important;
-        bottom: 300px !important;
-
-        width: calc(100% - 32px) !important;
-
-        margin: 0 !important;
-        padding: 20px 22px !important;
-
-        z-index: 40 !important;
-
-        transform: translateX(-50%) !important;
-    }
-
-    /* Footer below legend */
-    .site-footer {
-        position: absolute !important;
-
-        left: 50% !important;
-        top: auto !important;
-        bottom: 105px !important;
-
-        width: calc(100% - 40px) !important;
-
-        z-index: 40 !important;
-
-        transform: translateX(-50%) !important;
-    }
-
-    /* Music button at very bottom */
-    .music-button {
-        position: absolute !important;
-
-        left: 50% !important;
-        right: auto !important;
-        top: auto !important;
-        bottom: 22px !important;
-
-        z-index: 45 !important;
-
-        transform: translateX(-50%) !important;
-    }
 }
