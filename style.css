@@ -1324,9 +1324,9 @@ animation-delay: var(--twinkle-delay, 0s);
 .moon-button {
     position: absolute !important;
 
-    top: 1350px !important;
+    top: 1900px !important;
 
-    left: 50% !important;
+    left: 67% !important;
     right: auto !important;
     bottom: auto !important;
 
