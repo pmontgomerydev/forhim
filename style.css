@@ -1213,6 +1213,30 @@ animation-delay: var(--twinkle-delay, 0s);
         padding: 20px;
     }
 
+    /* ==========================================
+   MOBILE STAR CLICK FIX
+========================================== */
+
+/* Let taps pass through the hero text area */
+.hero {
+    pointer-events: none;
+}
+
+/* Keep stars easy to tap */
+.interactive-star {
+    pointer-events: auto;
+    z-index: 15;
+
+    width: 64px;
+    min-height: 64px;
+}
+
+/* The visual pieces don't need to catch taps */
+.star-symbol,
+.star-number {
+    pointer-events: none;
+}
+
     .logo {
         font-size: 30px;
     }
